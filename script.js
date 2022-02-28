@@ -6,11 +6,22 @@ function loadTrivia() {
     difficulty = document.getElementById('difficulty-selector').value;
     questionsAmount = document.getElementById('amount-selector').value;
     category = document.getElementById('category-selector').value;
-    console.log('https://opentdb.com/api.php?amount=' + questionsAmount + '&category=' + category + '&difficulty=' + difficulty)
-    fetch('https://opentdb.com/api.php?amount=' + questionsAmount + '&category=' + category + '&difficulty=' + difficulty)
+    let questionsSettingAPILink;
+    if (category === 'any') {
+        questionsSettingAPILink = 'https://opentdb.com/api.php?amount=' + questionsAmount + '&difficulty=' + difficulty;
+    } else {
+        questionsSettingAPILink = 'https://opentdb.com/api.php?amount=' + questionsAmount + '&category=' + category + '&difficulty=' + difficulty;
+    }
+    console.log(questionsSettingAPILink);
+    fetch(questionsSettingAPILink)
         .then(resp => resp.json())
         .then(createTrivias)
         .catch(err => console.log(err));
+    // console.log('https://opentdb.com/api.php?amount=' + questionsAmount + '&category=' + category + '&difficulty=' + difficulty)
+    // fetch('https://opentdb.com/api.php?amount=' + questionsAmount + '&category=' + category + '&difficulty=' + difficulty)
+    //     .then(resp => resp.json())
+    //     .then(createTrivias)
+    //     .catch(err => console.log(err));
 }
 
 function createTrivias(data) {
@@ -219,4 +230,3 @@ if(userLang == "en"){
         console.log('Nothing.');
       }
 }
-
