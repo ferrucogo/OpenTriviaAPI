@@ -161,7 +161,7 @@ function showResult() {
 
     let questionsNumber = triviaArray.length;
     if (points >=0 && points <= (questionsNumber / 3)) {
-        image.src = './images/sad-face.png';
+        image.src = './sad-face.png';
         pointsText.appendChild(document.createTextNode(points + ' / ' + (triviaArray.length)));
         resultText.appendChild(document.createTextNode('Sei proprio scarso!'));
 
@@ -170,7 +170,7 @@ function showResult() {
     }
 
     if (points >= (questionsNumber / 3)+1 && points <= (questionsNumber / 3)+(questionsNumber / 3)) {
-        image.src = './images/neutral-face.jpg';
+        image.src = './neutral-face.jpg';
         pointsText.appendChild(document.createTextNode(points + ' / ' + (triviaArray.length)));
         resultText.appendChild(document.createTextNode('Potresti fare meglio..'));
 
@@ -179,7 +179,7 @@ function showResult() {
     }
 
     if (points >= (questionsNumber / 3)+(questionsNumber / 3) && points <= questionsNumber) {
-        image.src = './images/happy-face.jpg';
+        image.src = './happy-face.jpg';
         pointsText.appendChild(document.createTextNode(points + ' / ' + (triviaArray.length)));
         resultText.appendChild(document.createTextNode('Sei un campione!'));
 
