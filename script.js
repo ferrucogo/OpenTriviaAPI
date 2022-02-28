@@ -130,7 +130,7 @@ function checkIfRight(event, questionId, answersContainerId, button) {
         //alert('Hai risposto a tutto!')
         this.showResult();
     }
-    if (triviaArray.length != NaN){
+    if (triviaArray.length !== 0){
         document.getElementById('start-trivia').disabled = true;
     }
 }
