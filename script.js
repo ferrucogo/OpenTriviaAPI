@@ -159,9 +159,9 @@ function showResult() {
 
     let questionsNumber = triviaArray.length;
     if (points >=0 && points <= (questionsNumber / 3)) {
-        image.src = './sad-face.png';
+        image.src = './sad-face.jpg';
         pointsText.appendChild(document.createTextNode(points + ' / ' + (triviaArray.length)));
-        resultText.appendChild(document.createTextNode('Sei proprio scarso!'));
+        resultText.appendChild(document.createTextNode('Sei proprio grullo mhanz!'));
 
         modalContent.appendChild(pointsText);
         modalContent.appendChild(resultText);
@@ -206,14 +206,14 @@ function showResult() {
     }
 }
 
-var timeleft = 60;
+var timeleft = 180;
 var downloadTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(downloadTimer);
     document.getElementById("countdown").innerHTML = "Il tempo è terminato";
     showResult();
   }
-  document.getElementById("progressBar").value = 60 - timeleft;
+  document.getElementById("progressBar").value = 180 - timeleft;
   document.getElementById("countdown").innerHTML = timeleft + " secondi rimanenti";
   timeleft -= 1;
 }, 1000);
